@@ -1,0 +1,59 @@
+.vr-container {
+    background-color: #19232d;
+
+}
+
+.mainlogo {
+    width: 100px;
+    position: relative;
+}
+
+.follow-us-icon-container {
+    width: 60px;
+    height: 60px;
+    background-color: #202b36;
+    border-radius: 40px;
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+.icon {
+    font-size: 25px;
+    color: #5a7184;
+}
+
+.firstcardpara {
+    color: #5a7184;
+}
+
+.firstcard {
+    text-align: center;
+
+}
+
+.icons-container {
+
+    margin: 0px auto;
+
+}
+
+.headingpurpose {
+    color: #5a7184;
+    font-size: 20px;
+
+}
+
+.paracolor {
+    color: #5a7184;
+    text-align: end;
+}
+
+.footclass {
+    color: #5a7184;
+
+}
+
+.hrline {
+    color: white;
+    font-weight: bold;
+}

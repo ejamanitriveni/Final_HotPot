@@ -1,0 +1,70 @@
+<!-- <div class="checkout-container">
+    <div class="card card-1 order-summary">
+      <h2>Order Summary</h2>
+      <ul>
+        <li *ngFor="let item of orderSummary">
+          <p>Item: {{ item.menuTitle }}</p>
+          <p>Quantity: {{ item.quantity }}</p>
+          <p>Price: {{ item.price }}</p>
+        </li>
+      </ul>
+      <p>Total Amount: Rs. {{ calculateTotalAmount() }}</p>
+    </div> -->
+
+
+<div class="profile-container">
+  <div class="tab-content">
+    <div *ngIf="activeTab === 'orders'" class="orders-tab">
+      <h3>Order Summary</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of orderSummary">
+            <td>{{ item.menuTitle }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.price }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>{{calculateTotalQuantity()}}</td>
+            <td>Amount: Rs.{{calculateTotalAmount()}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div>
+    
+    <div class="d-flex justify-content-between p-4">
+      <div class="p-2">
+        <h3 class="mb-3">Shipping Details</h3>
+        <p>House Number: {{ address?.houseNumber }}</p>
+        <p>Building Name: {{ address?.buildingName }}</p>
+        <p>Locality: {{ address?.locality }}</p>
+        <p>City: {{ address?.cityId }}</p>
+        <p>Landmark: {{ address?.landMark }}</p>
+        <div>
+          <button class="btn-dark modifyButtonMenu" (click)="navigateToProfile()">Edit</button>
+        </div>
+      </div>
+
+      <div class="shadow menu-item-card p-3">
+        <h3 class="mb-3">Payment Details</h3>
+        <p>Card Number: <input class="border-0" type="text" placeholder="xxxx xxxx xxxx"></p>
+        <p>Expiry: (mm/yyyy) <input class="border-0" type="text" placeholder="mm/yyyy"></p>
+        <p>CVV: <input class="border-0" type="password"></p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-12 text-center">
+    <button (click)="handlePlaceOrder()" class="purchase-button">Place Order</button>
+  </div>

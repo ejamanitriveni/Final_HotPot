@@ -1,0 +1,52 @@
+<div class="explore-menu-section pt-5 pb-5" id="exploreMenuSection">
+    <div class="container">
+        <form class="d-flex ml-auto mr-5" role="search" style="max-width: 200px;">
+            <input class="form-control me-2" placeholder="Search Restaurants" aria-label="Search" type="text" [formControl]="search" (keyup)="searchRestaurants()" />   
+          </form>      
+        <div class="row">
+            <div class="col-12">
+                <h1 class="menu-section-heading">Restaurants</h1>
+            </div>
+            <div *ngFor="let item of restaurants" class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                    <img [src]="item.restaurantImage" class="menu-item-image " />
+                    <h1 class="menu-card-title">{{item.restaurantName}}</h1>
+                    <button class="menu-item-link border-0" data-toggle="modal" attr.data-target="#{{item.restaurantName}}">
+                        View All
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" 
+                        data-toggle="modal" attr.data-target="#{{item.restaurantName}}" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                        </svg>
+                    </button>
+
+                    <div class="modal fade" id={{item.restaurantName}} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">{{item.restaurantName}}</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <p><b>Email:</b> {{item.email}}</p>
+                              <p><b>Mobile Number: </b>{{item.phone}}</p>
+                              <!-- <div *ngFor="let m of menus">
+                                <p><b>Menu Name: {{m.name}}</b></p>
+                              </div> -->
+                              
+                                                        
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+        
+                </div>       
+            </div>
+        </div>
+    </div>
+</div>

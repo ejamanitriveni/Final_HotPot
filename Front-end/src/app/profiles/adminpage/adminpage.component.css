@@ -1,0 +1,115 @@
+/* Admin Container */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+  }
+  
+  
+  
+  /* Tabs */
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+  
+  .tabs button {
+    background-color: #f05f40;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .tabs button:hover {
+    background-color: #e64a33;
+  }
+  
+  .tabs .active-tab {
+    background-color: #e64a33;
+  }
+  
+  /* Form */
+  .add-restaurant-form form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .add-restaurant-form .form-group {
+    flex: 1 1 45%;
+    margin-bottom: 20px;
+  }
+  
+  .add-restaurant-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .add-restaurant-form input[type="text"],
+  .add-restaurant-form input[type="tel"],
+  .add-restaurant-form input[type="email"],
+  .add-restaurant-form input[type="number"],
+  .add-restaurant-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .add-restaurant-form button {
+    background-color: #f05f40;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-restaurant-form button:hover {
+    background-color: #e64a33;
+  }
+  
+  /* Tables */
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th,
+  table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  /* Order and Payment History Sections */
+  .order-history,
+  .payment-history {
+    margin-top: 20px;
+  }
+  
+  .order-history h2,
+  .payment-history h2 {
+    color: #f05f40;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive Styling */
+  @media screen and (max-width: 768px) {
+    .add-restaurant-form .form-group {
+      flex: 1 1 100%;
+    }
+  }
+  

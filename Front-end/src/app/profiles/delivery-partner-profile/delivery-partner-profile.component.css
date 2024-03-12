@@ -1,0 +1,141 @@
+.profile-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .tabs button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #ff5a5f;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  .tabs button.active {
+    background-color: #e4363e;
+  }
+  
+  .tab-content {
+    margin-top: 20px;
+  }
+  
+  /* Profile Details Tab */
+  .cards-container-1 {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .first-card-1 {
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .first-card-1 h2 {
+    text-align: center;
+    color: #ff5a5f;
+    margin-bottom: 20px;
+  }
+  
+  .imgbox {
+    text-align: center;
+  }
+  
+  .imgbox img {
+    width: 150px;
+    border-radius: 50%;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .detail-field {
+    margin-bottom: 10px;
+  }
+  
+  .detail-field label {
+    font-weight: bold;
+  }
+  
+  .detail-field input {
+    width: calc(100% - 100px);
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .edit-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #ff5a5f;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .edit-button:hover {
+    background-color: #e4363e;
+  }
+  
+  /* Orders Tab */
+  .change-status-tab table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .change-status-tab th,
+  .change-status-tab td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+  
+  .change-status-tab th {
+    background-color: #ff5a5f;
+    color: #fff;
+  }
+  
+  .change-status-tab tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .change-status-tab tbody tr:hover {
+    background-color: #ddd;
+  }
+  
+  .change-status-tab button {
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #ff5a5f;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .change-status-tab button:hover {
+    background-color: #e4363e;
+  }
+  

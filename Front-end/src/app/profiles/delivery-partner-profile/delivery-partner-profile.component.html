@@ -1,0 +1,71 @@
+<div class="profile-container">
+    <div class="tabs">
+      <button class="active" (click)="handleTabChange('profile')">Profile Details</button>
+      <button (click)="handleTabChange('orders')">Orders</button>
+    </div>
+  
+    <div class="tab-content">
+      <div *ngIf="activeTab === 'profile'" class="cards-container-1">
+        <div class="first-card-1">
+          <div class="imgbox">
+            <!-- You can include user avatar here if available -->
+            <img src="https://img.freepik.com/premium-vector/impressao_753212-1273.jpg?w=740" alt="User Avatar" />
+          </div>
+          <div class="content">
+            <h2>Profile</h2>
+            <div class="detail-field">
+              <label for="Name">Name:</label>
+              <input class="first-text" type="text" [(ngModel)]="profile.name" />
+            </div>
+            <div class="detail-field">
+              <label for="Email">Email:</label>
+              <input class="first-text" type="text" [(ngModel)]="profile.email" />
+            </div>
+            <div class="detail-field">
+              <label for="Phone">Phone:</label>
+              <input class="first-text" type="text" [(ngModel)]="profile.phone" />
+            </div>
+            <div class="detail-field">
+              <label for="UserName">UserName:</label>
+              <input class="first-text" type="text" [(ngModel)]="profile.userName" disabled />
+            </div>
+          </div>
+          <button class="edit-button" (click)="editPartnerDetails()">Edit</button>
+        </div>
+      </div>
+      <div *ngIf="activeTab === 'orders'" class="change-status-tab">
+        <h2>Change Order Status</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Customer</th>
+              <th>Change Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders.slice().reverse()">
+              <td>{{ order.orderId }}</td>
+              <td>{{ order.orderDate | date: 'shortDate' }}</td>
+              <td>Rs. {{ order.amount | number: '1.2-2' }}</td>
+              <td>{{ order.status }}</td>
+              <td>{{ order.customer.name }}</td>
+              <td>
+                <select [ngModel]="getOrderStatus(order)" (ngModelChange)="handleChangestatus(order)">
+                    <!-- <option value="on the way">On the Way</option> -->
+                    <!-- <option value="delivered">Delivered</option>  -->
+                  </select>
+                  <button (click)="handleChangestatus(order.orderId)">Change Status</button>
+                  
+                  
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

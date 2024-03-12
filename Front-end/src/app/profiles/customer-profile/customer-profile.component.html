@@ -1,0 +1,108 @@
+<div class="page-container">
+  <h2 class="restaurantNameclass text-center">Your Account</h2>
+  <div class="cards-container">
+    <div class="first-card">
+      <div class="imgbox">
+
+        <img src="https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?t=st=1710188931~exp=1710192531~hmac=4706eeaa118cf72961c7981190a01903111ac34746db7e33832d3436c1e90500&w=740" alt="User Avatar">
+      </div>
+      <div class="content">
+        <h2>Profile</h2>
+        <div class="detail-field">
+          <label for="Name">Name:&nbsp;&nbsp;</label>
+          <input class="first-text" type="text" [(ngModel)]="customerDetails.name"
+            (change)="handleProfileChange('name', $event)">
+        </div>
+        <div class="detail-field">
+          <label for="Email">Email:&nbsp;&nbsp;</label>
+          <input class="first-text" type="text" [(ngModel)]="customerDetails.email"
+            (change)="handleProfileChange('email', $event)">
+        </div>
+        <div class="detail-field">
+          <label for="Phone">Phone:&nbsp;&nbsp;</label>
+          <input class="first-text" type="text" [(ngModel)]="customerDetails.phone"
+            (change)="handleProfileChange('phone', $event)">
+        </div>
+        <div class="detail-field">
+          <label for="UserName">UserName:&nbsp;&nbsp;</label>
+          <input class="first-text" type="text" [(ngModel)]="customerDetails.userName" disabled>
+        </div>
+      </div>
+      <button class="edit-button" (click)="editCustomerDetails()">Edit</button>
+    </div>
+
+
+    <div class="first-card">
+      <div class="imgbox">
+
+        <img src="https://img.freepik.com/free-vector/cloud-kitchen-concept-with-order-delivery-symbols-isometric-vector-illustration_98292-9015.jpg?t=st=1710188774~exp=1710192374~hmac=3c30f2bc11fc01ce458d6c442aface0baac482383d33ff54907836b0bd0ceb69&w=740" alt="Address Image">
+      </div>
+      <div class="content">
+        <h2>Address</h2>
+        <div class="detail-field">
+          <label for="HouseNumber">House Number:&nbsp;&nbsp;</label>
+          <input class="first-text" type="text" [(ngModel)]="customerAddress.houseNumber"
+            (change)="handleAddressChange('houseNumber', $event)">
+        </div>
+        <div class="detail-field">
+          <label for="BuildingName">Building Name:&nbsp;&nbsp;</label>
+          <input class="first-text" type="text" [(ngModel)]="customerAddress.buildingName"
+            (change)="handleAddressChange('buildingName', $event)">
+        </div>
+        <div class="detail-field">
+          <label for="Locality">Locality:&nbsp;&nbsp;</label>
+          <input class="first-text" type="text" [(ngModel)]="customerAddress.locality"
+            (change)="handleAddressChange('locality', $event)">
+        </div>
+        <div class="detail-field">
+          <label for="Landmark">Landmark:&nbsp;&nbsp;</label>
+          <input class="first-text" type="text" [(ngModel)]="customerAddress.landMark"
+            (change)="handleAddressChange('landMark', $event)">
+        </div>
+        <div class="dropdown">
+          <label for="City">City:&nbsp;&nbsp;</label>
+          <select [(ngModel)]="customerAddress.city.name" (change)="handleCityChange($event)">
+            <option *ngFor="let city of cities" [value]="city.name">{{ city.name }}</option>
+          </select>
+        </div>
+      </div>
+      <button class="edit-button" (click)="editCustomerAddress()">Edit</button>
+    </div>
+  </div>
+
+  <div class="history-title">
+    <h3 class="text-center mt-5">Your Orders</h3>
+  </div>
+  <div class="order-hostory container">
+    <div class="row">
+      <div *ngFor="let order of orderHistory" class="col-6">
+        <div class="d-flex justify-content-between shadow menu-item-card p-3 mb-3">
+          <div class="d-flex ">
+            <div class="mr-4">
+              <img [src]="order.restaurantImage" class="menu-item-image" alt="Restaurant Image">
+              <h5 class="text-center mt-3"><b class="restaurantNameclass">{{ order.restaurantName }}</b></h5>
+            </div>
+            <div>
+              <p><b class="menuItemClass">{{ order.orderDate | date:'longDate'}}</b></p>
+              <div *ngFor="let menuItem of order.menuName" class="d-flex">
+                <span><b class="menuItemClass">{{ menuItem.manuItemName }} - {{ menuItem.quantity }}</b></span>
+              </div>
+              <p><b class="menuItemClass">Order Price : Rs. {{ order.price }}</b></p>
+            </div>
+          </div>
+          <button *ngIf="canCancelOrder(order.status)" class="btn btn-danger"
+            (click)="cancelOrder(order.orderId)">Cancel</button>
+
+          <button *ngIf="order.status === 'on the way'" class="btn btn-primary"
+            (click)="fetchPartnerDetails(order.partnerId)">Delivery Partner</button>
+
+          <!-- <button *ngIf="order.status === 'delivered'" class="btn btn-success" data-bs-toggle="modal"
+              [attr.data-bs-target]="'#exampleModal-' + order.orderId">Give Rating</button> -->
+            <div class="deliverybuttoncon">
+          <button class="deliverybutton">{{ order.status }}</button>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

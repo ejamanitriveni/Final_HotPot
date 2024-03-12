@@ -1,0 +1,75 @@
+.menu-item-card {
+    width: 250px; /* Set the width of the card */
+    height: 300px; /* Set the height of the card */
+    margin: 10px; /* Add margin to create space between cards */
+    border: 1px solid #ccc; /* Add border for visual separation */
+    border-radius: 8px; /* Add border radius for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+    overflow: hidden; /* Hide overflow content */
+  }
+  
+  .menu-item-image img {
+    width: 100%; /* Make the image fill the container */
+    height: 50%; /* Set the height of the image */
+    object-fit: cover; /* Ensure the image covers the container */
+  }
+  .menu-item-image img {
+    width: 200px; /* Set the width of the image */
+    height: 150px; /* Set the height of the image */
+    margin: 0 auto 10px; /* Add margin: top and bottom 10px, left and right auto (centering horizontally) */
+    display: block; /* Ensure image is treated as a block element */
+  }
+  
+  
+  .menu-item-details {
+    padding: 10px; /* Add padding for content spacing */
+    text-align: center; /* Center-align text */
+  }
+  
+  .menu-item-details h3 {
+    margin-top: 0; /* Remove default margin for the heading */
+  }
+  
+  .menu-item-details p {
+    margin-bottom: 10px; /* Add margin to separate paragraphs */
+    color: #ff2828; /* Set the color of the description */
+  }
+  
+  .menu-item-details .price {
+    color: #f44336; /* Set the color of the price */
+    font-weight: bold; /* Make the price bold */
+  }
+  
+  .add-to-cart-btn {
+    background-color: #4caf50; /* Set button background color */
+    color: white; /* Set button text color */
+    border: none; /* Remove button border */
+    padding: 8px 16px; /* Add padding to the button */
+    border-radius: 4px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Add transition effect */
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #388e3c; /* Darken button color on hover */
+  }
+  .menu-listings {
+    display: flex; /* Use flexbox layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center-align items horizontally */
+    gap: 20px; /* Add gap between items */
+    max-height: calc(100vh - 150px); /* Set a maximum height for the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  .menu-item-card {
+    width: 250px; /* Set the width of the card */
+    height: 300px; /* Set the height of the card */
+    margin: 10px; /* Add margin to create space between cards */
+    border: 1px solid #ccc; /* Add border for visual separation */
+    border-radius: 8px; /* Add border radius for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+    overflow: hidden; /* Hide overflow content */
+  }
+  
+  

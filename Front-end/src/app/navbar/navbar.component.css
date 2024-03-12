@@ -1,0 +1,33 @@
+
+.websiteLogo{
+    width: 40px;
+    height: 40px;
+  }
+  .customnavbar-brand{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+  }
+  .customnavbar{
+    padding: 0px 10px 0px 7px !important;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+  }
+  .HotBytesTitle{
+    font-size: 15px;
+    margin: 0px;
+  }
+  .nav-item .nav-link:hover{
+    background-color: rgb(197, 197, 220);
+    color: black;
+    border-radius: 6px;
+    border: 1px solid black;
+  }
+  .Customnavsearch{
+    margin-top: 4px ;
+  }
+
+  .customOffcanvas{
+    width : 340px;
+  }
+
+

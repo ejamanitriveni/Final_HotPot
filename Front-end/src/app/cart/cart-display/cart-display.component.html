@@ -1,0 +1,40 @@
+
+<div class="container">
+	<div *ngIf="cartNotEmpty; else emptyCart" class="row cart-container">
+		<div class="col-12">
+			<h1 class="menu-section-heading text-center mt-5">My Cart</h1>
+		</div>
+		
+			<div *ngFor="let cart of carts" class="col-12 col-md-6 col-lg-3">
+				<div class="shadow menu-item-card p-3 mb-3">
+					<img [src]="cart.menuImage" [alt]="cart.menuTitle"  class="menu-item-image">
+					<div class="cart-details text-center">
+						<h3>{{ cart.menuTitle }}</h3>
+						<div class="d-flex flex-column">
+							<p class="quantitycss">Quantity: {{ cart.quantity }}</p>
+							<div class="button-group">
+								<button (click)="increaseCartItemQuantity(cart.cartId)"
+									class="mr-5 modifyButtonCart" id="">+</button>
+								<button (click)="decreaseCartItemQuantity(cart.cartId)"
+									class="modifyButtonCart">-</button>
+							</div>
+						</div>
+
+						<p class="m-1">Price: Rs. {{ cart.price.toFixed(2) }}</p>
+
+						<button (click)="deleteCartItem(cart.cartId)" class="delete-action-button p-2">Delete</button>
+					</div>
+				</div>
+			</div>
+		
+		<div class="col-12 text-center">
+			<button (click)="purchaseAllItems()" class="purchase-button">Purchase</button>
+		</div>
+	</div>
+	<ng-template #emptyCart>
+		<div class="d-flex flex-column justify-content-center align-items-center mt-5">
+			<img src="{{ EmptyCartImg }}" alt="Empty Cart Image" class="empty-cart-image">
+			<p class="mt-5">Your cart is empty</p>
+		</div>
+	</ng-template>
+</div>

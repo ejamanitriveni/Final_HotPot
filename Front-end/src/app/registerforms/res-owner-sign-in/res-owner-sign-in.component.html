@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html lang="en"> 
+
+ <head> 
+
+  <meta charset="UTF-8"> 
+
+  <title>Register </title> 
+
+
+ </head> 
+      <body> 
+       <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+         <div class="register"> 
+             <div class="content"> 
+                 <h2>R.Owner Login</h2> {{loginObj.AdminData|json}}
+                 <form #form="ngForm" autocomplete="off" (submit)="onSubmit()">
+                   
+                   <div class="form-group">
+                     <div class="input-group">
+                     <div class="input-group-prepend">
+                     <div class="input-group-text bg-white">
+                     <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="UserName.valid"
+                     [class.red-icon]="UserName.invalid && UserName.touched"></i>
+                     <input name="UserName" #UserName="ngModel" [(ngModel)]="loginObj.UserName"
+                     placeholder="UserName" class="form-control" required>
+                     </div></div> </div> </div>
+                   <div class="form-group">
+                   <div class="input-group">
+                   <div class="input-group-prepend">
+                    <div *ngIf="hidepassword; else elseBlock">
+
+                      <div class="input-group-text bg-white">
+                        <i aria-hidden="true" [class.green-icon]="Password.valid"
+                          [class.red-icon]="Password.invalid && Password.touched"></i>
+                        <input name="Password" #Password="ngModel" type="password" [(ngModel)]="loginObj.Password"
+                          placeholder="Password" class="form-control" required>
+                        <i class="fa-solid fa-eye ml-1" (click)="HidePassword()"></i>
+                      </div>
+                    </div>
+                    <ng-template #elseBlock>
+      
+                      <div class="input-group-text bg-white">
+                        <i aria-hidden="true" [class.green-icon]="Password.valid"
+                          [class.red-icon]="Password.invalid && Password.touched"></i>
+                        <input name="Password" #Password="ngModel" type="text" [(ngModel)]="loginObj.Password"
+                          placeholder="Password" class="form-control" required>
+                        <i class="fa-solid fa-eye ml-1" (click)="HidePassword()"></i>
+                      </div>
+      
+                    </ng-template></div> </div> </div>
+                <div class="links"><a href="res-owner-sign-up">Signup</a></div> 
+                           <button class="btn btn-success btn-lg" type="submit"
+                           [disabled]="form.invalid">
+                           <i class="fa fa-database"></i> Login </button> 
+                   </form>          
+             </div> 
+         </div> 
+       </section>
+      </body>
+

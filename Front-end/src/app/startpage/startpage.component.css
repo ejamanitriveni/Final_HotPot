@@ -1,0 +1,49 @@
+.adminPic{
+    width: 100px;
+    height: 100px;
+  }
+  .personCustom{
+    /* background-color: aqua; */
+    background-color: rgb(239, 213, 180);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 29px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+    width: 130px;
+    height: 160px;
+  }
+  .personCustom :hover{
+    border-radius: 50px;
+    border-color: #494949 !important;
+    transition: all 0.3s ease 0s;
+  }
+  .personName{
+    text-align: center;
+    color: rgb(70, 60, 9);
+    font-size: 20px;
+  }
+
+  .piccontainer{
+    margin-bottom: 150px;
+    font-size: 10px;
+  }
+  .customBody{
+    /* background-image: url('../../assets/images/websiteBg2.jpg'); */
+    background-image: url('https://as2.ftcdn.net/v2/jpg/06/85/02/31/1000_F_685023157_H85hQqmwP7gvfGTaVtDUWOvmnKwEpAey.jpg');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+  .accountTypeHeading{
+    color:rgb(247, 245, 243);
+    
+  }
+
+  .dpclass{
+    padding: 2px;
+  }

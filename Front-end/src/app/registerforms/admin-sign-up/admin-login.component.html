@@ -1,0 +1,122 @@
+<!-- <!doctype html>
+
+<html lang="en"> 
+
+ <head> 
+
+  <meta charset="UTF-8"> 
+
+  <title>Register </title> 
+
+
+ </head> 
+      <body> 
+       <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+         <div class="register"> 
+             <div class="content"> 
+                 <h2>Register</h2> {{loginObj.AdminData|json}}
+                 <form #form="ngForm" autocomplete="off" (submit)="onSubmit()">
+                   
+                   <div class="form-group">
+                     <div class="input-group">
+                     <div class="input-group-prepend">
+                     <div class="input-group-text bg-white">
+                     <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="UserName.valid"
+                     [class.red-icon]="UserName.invalid && UserName.touched"></i>
+                     <input name="UserName" #UserName="ngModel" [(ngModel)]="loginObj.AdminData.UserName"
+                     placeholder="UserName" class="form-control" required>
+                     </div></div> </div> </div>
+                   <div class="form-group">
+                   <div class="input-group">
+                   <div class="input-group-prepend">
+                   <div class="input-group-text bg-white">
+                   <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="Password.valid"
+                   [class.red-icon]="Password.invalid && Password.touched"></i>
+                   <input name="Password" #Password="ngModel" [(ngModel)]="loginObj.AdminData.Password"
+                   placeholder="Password" class="form-control" required>
+                   </div></div> </div> </div>
+                   <div class="form-group">
+                    <div class="input-group">
+                    <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                    <i class="fa fa-compass" aria-hidden="true" [class.green-icon]="Role.invalid && Role.touched"></i>
+                    <input name="Role" #Role="ngModel" [(ngModel)]="loginObj.AdminData.Role"
+                    placeholder="Role"
+                    class="form-control" required
+                    maxlength="30">
+                </div></div> </div> </div>
+                <div class="links"><a href="admin-sign-up">Signup</a></div> 
+                           <button class="btn btn-success btn-lg" type="submit"
+                           [disabled]="form.invalid">
+                           <i class="fa fa-database"></i> Login </button> 
+                   </form>          
+             </div> 
+         </div> 
+       </section>
+      </body>
+ -->
+
+
+
+ <!doctype html>
+
+<html lang="en"> 
+
+ <head> 
+
+  <meta charset="UTF-8"> 
+
+  <title>Register </title> 
+
+
+ </head> 
+      <body> 
+       <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+         <div class="register"> 
+             <div class="content"> 
+                 <h2>Admin Login</h2> {{loginObj.AdminData|json}}
+                 <form #form="ngForm" autocomplete="off" (submit)="onSubmit()">
+                   
+                   <div class="form-group">
+                     <div class="input-group">
+                     <div class="input-group-prepend">
+                     <div class="input-group-text bg-white">
+                     <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="UserName.valid"
+                     [class.red-icon]="UserName.invalid && UserName.touched"></i>
+                     <input name="UserName" #UserName="ngModel" [(ngModel)]="loginObj.UserName"
+                     placeholder="UserName" class="form-control" required>
+                     </div></div> </div> </div>
+                   <div class="form-group">
+                   <div class="input-group">
+                   <div class="input-group-prepend">
+                   <div class="input-group-text bg-white">
+                   <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="Password.valid"
+                   [class.red-icon]="Password.invalid && Password.touched"></i>
+                   <input name="Password" #Password="ngModel" [(ngModel)]="loginObj.Password"
+                   placeholder="Password" class="form-control" required>
+                   </div></div> </div> </div>
+                   <div class="form-group">
+                    <div class="input-group">
+                    <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                    <i class="fa fa-compass" aria-hidden="true" [class.green-icon]="Role.invalid && Role.touched"></i>
+                    <input name="Role" #Role="ngModel" [(ngModel)]="loginObj.Role"
+                    placeholder="Role"
+                    class="form-control" required
+                    maxlength="30">
+                </div></div> </div> </div>
+                <div class="links"><a href="admin-sign-up">Signup</a></div> 
+                           <button class="btn btn-success btn-lg" type="submit"
+                           [disabled]="form.invalid">
+                           <i class="fa fa-database"></i> Login </button> 
+                   </form>          
+             </div> 
+         </div> 
+       </section>
+      </body>
+ 
+
+
+
+
+

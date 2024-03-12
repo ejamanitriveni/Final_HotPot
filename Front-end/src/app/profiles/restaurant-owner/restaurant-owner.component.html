@@ -1,0 +1,130 @@
+<div class="profile-container">
+    <div class="tabs">
+        <button class="tab-btn" [class.active]="activeTab === 'orders'" (click)="handleTabChange('orders')">View Orders</button>
+        <button class="tab-btn" [class.active]="activeTab === 'payments'" (click)="handleTabChange('payments')">View Payments</button>
+        <button class="tab-btn" [class.active]="activeTab === 'changeStatus'" (click)="handleTabChange('changeStatus')">Change Order Status</button>
+        <button class="tab-btn" [class.active]="activeTab === 'addMenu'" (click)="handleTabChange('addMenu')">Add Menu</button>
+    </div>
+
+    <div class="tab-content">
+        <div *ngIf="activeTab === 'orders'" class="orders-tab">
+            <h2>View Orders</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Customer</th>
+                        <th>Delivery Partner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order of orders">
+                        <td>{{ order.orderId }}</td>
+                        <td>{{ order.orderDate | date }}</td>
+                        <td>Rs. {{ order.amount.toFixed(2) }}</td>
+                        <td>{{ order.status }}</td>
+                        <td>{{ order.customer.name }}</td>
+                        <td>{{ order.deliveryPartner.name }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</div>
+         
+            <div *ngIf="activeTab === 'payments'" class="payments-tab">
+                <h2>View Payments</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Mode</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Order ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let payment of payments.slice().reverse()">
+                            <td>{{ payment.paymentId }}</td>
+                            <td>{{ payment.paymentMode }}</td>
+                            <td>Rs. {{ payment.amount.toFixed(2) }}</td>
+                            <td>{{ payment.status }}</td>
+                            <td>{{ payment.date | date }}</td>
+                            <td>{{ payment.orderId }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        
+        
+        
+            <!-- HTML code for Change Order Status tab -->
+            <div *ngIf="activeTab === 'changeStatus'" class="change-status-tab">
+                <h2>Change Order Status</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let order of orders">
+                            <td>{{ order.orderId }}</td>
+                            <td>{{ order.status }}</td>
+                            <td>
+                                <button class="purchase-button" (click)="handleChangestatus(order.orderId, 'delivered')">Change Status</button>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        
+
+        
+        <div *ngIf="activeTab === 'addMenu'" class="add-menu-tab">
+            <h2>Add Menu</h2>
+            <form (submit)="handleMenuSubmit()">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" [(ngModel)]="newMenu.name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Type:</label>
+                    <select [(ngModel)]="newMenu.type" name="type">
+                        <option value="Veg">Veg</option>
+                        <option value="Non-Veg">Non-Veg</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Price:</label>
+                    <input type="number" [(ngModel)]="newMenu.price" name="price" required>
+                </div>
+                <!-- Add other form fields here -->
+        
+                <div class="form-group">
+                    <button class="purchase-button" type="submit">Add Menu</button>
+                </div>
+            </form>
+        
+            <div class="form-group">
+                <label>Select Menu to Delete:</label>
+                <select [(ngModel)]="selectedMenuId" name="selectedMenuId">
+                    <option value="">Select Menu</option>
+                    <option *ngFor="let menu of menus" [value]="menu.menuId">{{ menu.name }}</option>
+                </select>
+            </div>
+        
+            <div class="error" *ngIf="error">{{ error }}</div>
+            <button class="purchase-button" (click)="handleDeleteMenu()">Delete Menu</button>
+        </div>
+        
+    </div>

@@ -1,0 +1,21 @@
+
+    <h2>Menu</h2>
+    
+    <div class="menu-listings">
+      <div class="row">
+        <div *ngFor="let item of menuItems" class="col-3">
+          <div class="card menu-item-card">
+            <img class="card-img-top" [src]="item.itemImage" [alt]="item.name">
+            <div class="card-body">
+              <h5 class="card-title">{{ item.name }}</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price">Rs. {{ item.price }}</span>
+                <button class="btn btn-primary" (click)="handleAddToCart(item.menuId)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
